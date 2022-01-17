@@ -7,7 +7,7 @@
 }
 
 body {
-    background: linear-gradient( 90deg, rgb(39, 105, 37) 0%, rgb(58, 136, 63) 100%);
+    background: #fff;
 }
 
 .todo-app {
@@ -16,7 +16,6 @@ body {
     justify-content: start;
     width: 520px;
     min-height: 600px;
-    background: #161a2b;
     text-align: center;
     margin: 128px auto;
     border-radius: 10px;
@@ -25,7 +24,7 @@ body {
 
 h1 {
     margin: 32px 0;
-    color: #fff;
+    color: rgb(57, 104, 51);
     font-size: 24px;
     text-align: center;
 }
@@ -42,16 +41,16 @@ h1 {
 .todo-input {
     padding: 14px 32px 14px 16px;
     margin-left: 10%;
-    border-radius: 4px 0 0 4px;
-    border: 2px solid #6de086;
+    border-radius: 50px 0 0 50px;
+    border: 2px solid rgb(57, 104, 51);
     outline: none;
     width: 70%;
     background: transparent;
-    color: #fff;
+    color: rgb(57, 104, 51);
 }
 
 .todo-input::placeholder {
-    color: #e2e2e2;
+    color: #adadad;
 }
 
 .todo-button {
@@ -59,10 +58,10 @@ h1 {
     border: none;
     width: 12%;
     height: 48px;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0 50px 50px 0;
     cursor: pointer;
     outline: none;
-    background-color: #6de086;
+    background-color: rgb(57, 104, 51);
     color: #fff;
 }
 
@@ -81,15 +80,25 @@ h1 {
     position: relative;
 }
 
+.todo-row-delete-button {
+    text-align: center;
+    margin: 4px auto;
+    color: #fff;
+    background: linear-gradient( 90deg, rgb(57, 104, 51) 0%, rgb(73, 133, 65) 100%);
+    padding: 16px;
+    border-radius: 30px;
+    width: 20%;
+}
+
 .todo-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 4px auto;
     color: #fff;
-    background: linear-gradient( 90deg, rgb(198, 212, 72) 0%, rgb(161, 170, 33) 100%);
+    background: linear-gradient( 90deg, rgb(57, 104, 51) 0%, rgb(73, 133, 65) 100%);
     padding: 16px;
-    border-radius: 5px;
+    border-radius: 30px;
     width: 90%;
 }
 
