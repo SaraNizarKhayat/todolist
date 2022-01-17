@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from "react";
 import TodoForm from "./TodoForm";
-import { RiCloseCircleLine } from "react-icons/ri";
-import { TiEdit } from "react-icons/ti";
+import { AiOutlineCloseSquare } from "react-icons/ai";
+import { BiEdit } from "react-icons/bi";
 
 
 
@@ -24,6 +24,16 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
 
+  function toggleComplete(id){
+    const updateTodo = [... todos].map((todo) => {
+      if(todo.id === id){
+        todo.isComplete = !todo.isComplete
+      }
+      return todo;
+    })
+    setEdit(updateTodo); 
+  }
+
   return todos.map((todo, index) => (
     <div
       className={todo.isComplete ? "todo-row complete" : "todo-row"}
@@ -33,13 +43,21 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
         {todo.text}
       </div>
       <div className="icons">
-        <RiCloseCircleLine
-          onClick={() => removeTodo(todo.id)}
-          className="delete-icon"
+        <label className="custom-checkbox">
+        <input 
+        type="checkbox" 
+        onChange={() => toggleComplete(todo.id)}
+        checked={todo.isComplete}
         />
-        <TiEdit
+        <span className="checkmark"></span>
+        </label>
+        <BiEdit
           onClick={() => setEdit({ id: todo.id, value: todo.text })}
           className="edit-icon"
+        />
+        <AiOutlineCloseSquare
+          onClick={() => removeTodo(todo.id)}
+          className="delete-icon"
         />
       </div>
     </div>

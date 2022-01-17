@@ -43,7 +43,7 @@ function TodoList() {
     });
     setTodos(updatedTodos);
   };
-
+  
   return (
     <>
       <h1>What's the Plan for Today?</h1>

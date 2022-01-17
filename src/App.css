@@ -111,9 +111,38 @@ h1 {
 
 .delete-icon {
     margin-right: 5px;
+    margin-left: 5px;
     color: #fff;
 }
 
 .edit-icon {
     color: #fff;
+}
+
+.checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.custom-checkbox .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(103, 180, 92);
+    display: inline-block;
+    margin-right: 6px;
+    margin-top: 5px;
+    border-radius: 3px;
+    background: rgb(151, 255, 137) url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+    transition: background-size 0.2s ease;
+}
+
+.custom-checkbox input:checked+.checkmark {
+    background-size: 60%;
+    transition: background-size 0.25s cubic-bezier(0.7, 0, 0.18, 1.24);
+}
+
+.custom-checkbox input {
+    display: none;
 }
